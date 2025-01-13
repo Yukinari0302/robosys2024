@@ -15,7 +15,7 @@ def classify_bmi(fat_percentage, height, weight):
         body_type = "標準体型"
         message = "このままの体型をしっかり維持していきましょう。"
     else:
-        body_type = "肥満体系"
+        body_type = "肥満体型"
         message = "しっかり運動しましょう。"
     return bmi, body_type, message
 
@@ -24,6 +24,10 @@ def main():
     try:
         fat_str, height_str, weight_str = input_data.split()
         fat_percentage = float(fat_str.strip('%'))
+        if fat_percentage < 0 or fat_percentage > 100:
+            print("エラー: 脂肪率は0%から100%の範囲で入力してください。")
+            return
+
         height = int(height_str.strip('cm'))
         weight = float(weight_str.strip('kg'))
 
