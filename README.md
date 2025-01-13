@@ -1,26 +1,92 @@
 # robosys2024
-ロボットシステム学課題1のリポジトリ
-
-![Build Status](https://github.com/yourusername/your-repo-name/actions/workflows/ci.yml/badge.svg)
+# 1_taikei - 体脂肪率とBMI判定ツール
 
 ## 概要
 このプログラムは、BMI（Body Mass Index）と体脂肪率に基づいて体型を判別するツールです。体脂肪率と身長、体重を入力として受け取り、その結果をもとに体型（痩せ体型、標準体型、肥満体型）を表示します。また、BMIも計算され、アドバイスが提供されます。
 
 ## インストール方法
+
+### 必要なソフトウェア
 このプロジェクトはPython3を使用しています。以下の手順でインストールしてください。
 
 1. リポジトリをクローンします：
    ```bash
    git clone https://github.com/yourusername/your-repo-name.git
+プロジェクトディレクトリに移動します：
 
+bash
+コードをコピーする
+cd robosys2024
+必要に応じてPythonの依存関係をインストールします（任意の場合）：
 
-# ライセンス
-- このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
-- このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
-    - [ryuichiueda/my_slides robosys_2024](https://github.com/ryuichiueda/my_slides/tree/master/robosys_2024)
-- © 2024 Yukinari Takahashi
+bash
+コードをコピーする
+pip install -r requirements.txt
+実行方法
+実行コード
+以下のコマンドを実行することで、体脂肪率、身長、体重を入力し、その結果を表示します。
 
-# 1_taikei
+bash
+コードをコピーする
+echo "体脂肪率(%) 身長(cm) 体重(kg)" | ./1_taikei
+"体脂肪率", "身長", "体重"の各値はそれぞれ実際のデータに置き換えてください。
 
-![Build Status](https://github.com/yourusername/your-repo-name/actions/workflows/ci.yml/badge.svg)
+実行例
+例1: 体脂肪率 8.5%, 身長 170cm, 体重 65kg の場合
 
+bash
+コードをコピーする
+echo "8.5% 170cm 65kg" | ./1_taikei
+実行結果:
+
+makefile
+コードをコピーする
+BMI: 22.49
+あなたは痩せ体型と判別されました。
+しっかりご飯を食べましょう。
+例2: 体脂肪率 20%, 身長 170cm, 体重 65kg の場合
+
+bash
+コードをコピーする
+echo "20% 170cm 65kg" | ./1_taikei
+実行結果:
+
+makefile
+コードをコピーする
+BMI: 22.49
+あなたは標準体型と判別されました。
+このままの体型をしっかり維持していきましょう。
+例3: 体脂肪率 30%, 身長 170cm, 体重 65kg の場合
+
+bash
+コードをコピーする
+echo "30% 170cm 65kg" | ./1_taikei
+実行結果:
+
+makefile
+コードをコピーする
+BMI: 22.49
+あなたは肥満体型と判別されました。
+しっかり運動しましょう。
+エラーケース
+不正な入力があった場合、以下のようなエラーが表示されます。
+
+数値以外の文字が入力された場合:
+
+bash
+コードをコピーする
+echo "abc 170cm 65kg" | ./1_taikei
+実行結果:
+
+bash
+コードをコピーする
+エラー: 入力形式が正しくありません。
+例: echo '22.5% 170cm 65kg' | ./1_taikei
+注意
+このプログラムではBMIと体脂肪率を元に体型を判定し、その後アドバイスを提供します。
+入力は適切な形式で行ってください（体脂肪率は「%」を付けて、身長は「cm」を、体重は「kg」を付けて入力）。
+エラーハンドリングを行っており、入力が正しくない場合はエラーメッセージが表示されます。
+ライセンス
+このソフトウェアパッケージは、3条項BSDライセンスの下、再頒布および使用が許可されます。
+
+© 2024 Yukinari Takahashi
