@@ -1,0 +1,56 @@
+#!/usr/bin/python3
+# SPFX-FileCopyrightText: 2024 Yukinari Takahashi
+# SPDX-License-Identifier: BSD-3-Clause
+
+import sys
+
+def calculate_bmi(weight, height):
+    """BMIの計算"""
+    height_m = height / 100  # 身長をメートルに変換
+    bmi = weight / (height_m ** 2)
+    return bmi
+
+def classify_body_type(bmi, body_fat_percentage, gender):
+    """体型分類"""
+    # BMIに基づく体型分類
+    if bmi < 18.5 or body_fat_percentage < (10 if gender == 'male' else 20):
+        return "痩せ体型"
+    elif 18.5 <= bmi <= 24.9 and (10 <= body_fat_percentage <= 20 if gender == 'male' else 20 <= body_fat_percentage <= 30):
+        return "標準体型"
+    elif bmi >= 25 or body_fat_percentage >= (20 if gender == 'male' else 30):
+        return "肥満体型"
+    else:
+        return "不明な体型"
+
+def main():
+    user_input = sys.stdin.read().strip().split()
+
+    if len(user_input) != 3:
+        print("エラー: 体脂肪率、身長、体重をすべて入力してください。", file=sys.stderr)
+        sys.exit(1)
+
+    try:
+        # 入力の解析
+        body_fat_percentage = float(user_input[0].replace('%', ''))  # 体脂肪率 (%)
+        height = float(user_input[1].replace('cm', ''))  # 身長 (cm)
+        weight = float(user_input[2].replace('kg', ''))  # 体重 (kg)
+
+        # 身長と体重からBMIを計算
+        bmi = calculate_bmi(weight, height)
+        
+        # 性別を設定 (例えば、'male' または 'female')
+        gender = 'female'  # ここで性別を設定する（ユーザー入力に応じた変更も可能）
+
+        # 体型分類
+        body_type = classify_body_type(bmi, body_fat_percentage, gender)
+        
+        # 結果表示
+        print(f"あなたは{body_type}と判別されました")
+        print(f"BMI: {bmi:.2f})
+    
+    except ValueError:
+        print("エラー: 有効な数値を入力してください。", file=sys.stderr)
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
