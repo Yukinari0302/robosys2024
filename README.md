@@ -9,17 +9,17 @@ Python テスト済みバージョン:3.7から3.11
 Ubuntu 22.04LTS
 
 ### インストール手順
-1. リポジトリをクローン：
+1. リポジトリをクローン
    ```bash
    git clone https://github.com/Yukinari0302/robosys2024
    ```
-2. ディレクトリへ移動：
+2. ディレクトリへ移動
    ```bash
    cd robosys2024
    ```
 ## 実行方法
 ### 1_kadaiについて
-体脂肪率,身長,体重を入力するとBMIを計算し、体型の評価とBMIを出力します。
+体脂肪率、身長、体重を入力するとBMIを計算し、体型の評価とBMIを出力します。
 ### 実行コード
 ```bash
 echo "OO.O% OO.Ocm OO.Okg" | ./1_taikei
