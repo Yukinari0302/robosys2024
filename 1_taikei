@@ -41,6 +41,7 @@ def main():
         print("例: echo'22.5% 170cm 65kg' | ./taikei",file=sys.stderr)
         sys.exit(1)
 
+
 if __name__ == "__main__":
     main()
 
