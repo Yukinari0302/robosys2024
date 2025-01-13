@@ -1,4 +1,7 @@
 #!/bin/bash
+# SPSX-FileCopyrightText: 2024 Yukinari Takahashi
+# SPDX-License-Identifier: BSD-3-Clause
+
 
 ng () {
     echo "テスト失敗: $1 行目が違うよ"
