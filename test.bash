@@ -35,3 +35,8 @@ exp="エラー: 脂肪率は0%から100%の範囲で入力してください。"
 # テスト結果の確認
 [ "$res" -eq 0 ] && echo "OK" || echo "Test failed."
 
+exit $res
+
+
+
+
