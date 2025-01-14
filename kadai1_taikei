@@ -36,6 +36,7 @@ def main():
         print(f"BMI: {bmi:.2f}")
         print(f"あなたは{body_type}と判別されました。", file=sys.stderr)
         print(message, file=sys.stedrr)
+
     except Exception as e:
         print("エラー:入力形式が正しくありません。",file=sys.stderr)
         print("例: echo'22.5 170 65' | ./taikei",file=sys.stderr)
