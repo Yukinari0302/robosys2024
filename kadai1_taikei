@@ -24,7 +24,7 @@ def main():
     try:
         fat_str, height_str, weight_str = input_data.split()
 
-        if "%" in gat_str:
+        if "%" in fat_str:
             fat_percentage = float(fat_str.strip())
         else:
             fat_percentage = float(fat_str)
