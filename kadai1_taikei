@@ -23,7 +23,7 @@ def main():
     input_data = sys.stdin.read().strip()
     try:
         fat_str, height_str, weight_str = input_data.split()
-        fat_percentage = float(fat_str.strip('%'))
+        fat_percentage = float(fat_str.strip())
         if fat_percentage < 0 or fat_percentage > 100:
             print("エラー: 脂肪率は0%から100%の範囲で入力してください。", file=sys.stderr)
             return
