@@ -21,7 +21,7 @@ exp_message="しっかりご飯を食べましょう。"
 
 bmi=$(echo "$stdout" | tail -n 1)
 body_type=$(echo "$stderr" | head -n 1)
-message=$(echo "$stderr" | tail -n 1)
+message=$(echo "$stderr" | sed -n 2p)
 
 [ "$bmi" = "$exp_bmi" ] || ng "$LINENO"
 [ "$body_type" = "$exp_body_type" ] || ng "$LINENO"
