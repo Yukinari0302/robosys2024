@@ -37,7 +37,7 @@ exp_message="このままの体型をしっかり維持していきましょう�
 
 bmi=$(echo "$stdout" | tail -n 1)
 body_type=$(echo "$stderr" | head -n 1)
-message=$(echo "$stderr" | tail -n 1)
+message=$(echo "$stderr" | sed -n 2p)
 
 [ "$bmi" = "$exp_bmi" ] || ng "$LINENO"
 [ "$body_type" = "$exp_body_type" ] || ng "$LINENO"
@@ -53,7 +53,7 @@ exp_message="しっかり運動しましょう。"
 
 bmi=$(echo "$stdout" | tail -n 1)
 body_type=$(echo "$stderr" | head -n 1)
-message=$(echo "$stderr" | tail -n 1)
+message=$(echo "$stderr" | sed -n 2p)
 
 [ "$bmi" = "$exp_bmi" ] || ng "$LINENO"
 [ "$body_type" = "$exp_body_type" ] || ng "$LINENO"
