@@ -34,16 +34,13 @@ def main():
         bmi, body_type, message = classify_bmi(fat_percentage, height, weight)
 
         print(f"BMI: {bmi:.2f}")
-        print(f"あなたは{body_type}と判別されました。")
-        print(message)
-    except ValueError:
+        print(f"あなたは{body_type}と判別されました。", file=sys.stderr)
+        print(message, file=sys.stedrr)
+    except Exception as e:
         print("エラー:入力形式が正しくありません。",file=sys.stderr)
         print("例: echo'22.5 170 65' | ./taikei",file=sys.stderr)
         sys.exit(1)
 
-    except Exception as e:
-        print(f"エラー: 予期しないエラーが発生しました: {str(e)}", file=sys.stderr)
-        sys.exit(1)
 
 if __name__ == "__main__":
     main()
