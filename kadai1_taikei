@@ -38,7 +38,7 @@ def main():
         print(message)
     except ValueError:
         print("エラー:入力形式が正しくありません。",file=sys.stderr)
-        print("例: echo'22.5% 170cm 65kg' | ./taikei",file=sys.stderr)
+        print("例: echo'22.5 170 65' | ./taikei",file=sys.stderr)
         sys.exit(1)
 
     except Exception as e:
