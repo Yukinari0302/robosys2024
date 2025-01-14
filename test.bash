@@ -70,6 +70,7 @@ error=$(echo "$stderr" | tail -n 1)
 # テスト結果の確認
 [ "$res" -eq 0 ] && echo "OK" || echo "Test failed."
 
+
 exit $res
 
 
