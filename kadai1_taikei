@@ -28,8 +28,8 @@ def main():
             print("エラー: 脂肪率は0%から100%の範囲で入力してください。", file=sys.stderr)
             return
 
-        height = int(height_str.strip)
-        weight = float(weight_str.strip)
+        height = int(height_str.strip())
+        weight = float(weight_str.strip())
 
         bmi, body_type, message = classify_bmi(fat_percentage, height, weight)
 
@@ -41,6 +41,9 @@ def main():
         print("例: echo'22.5% 170cm 65kg' | ./taikei",file=sys.stderr)
         sys.exit(1)
 
+    except Exception as e:
+        print(f"エラー: 予期しないエラーが発生しました: {str(e)}", file=sys.stderr)
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
