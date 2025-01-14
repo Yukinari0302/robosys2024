@@ -25,18 +25,18 @@ def main():
         fat_str, height_str, weight_str = input_data.split()
         fat_percentage = float(fat_str.strip('%'))
         if fat_percentage < 0 or fat_percentage > 100:
-            print("エラー: 脂肪率は0%から100%の範囲で入力してください。")
+            print("エラー: 脂肪率は0%から100%の範囲で入力してください。", file=sys.stderr)
             return
 
-        height = int(height_str.strip('cm'))
-        weight = float(weight_str.strip('kg'))
+        height = int(height_str.strip)
+        weight = float(weight_str.strip)
 
         bmi, body_type, message = classify_bmi(fat_percentage, height, weight)
 
         print(f"BMI: {bmi:.2f}")
         print(f"あなたは{body_type}と判別されました。")
         print(message)
-    except Exception as e:
+    except ValueError:
         print("エラー:入力形式が正しくありません。",file=sys.stderr)
         print("例: echo'22.5% 170cm 65kg' | ./taikei",file=sys.stderr)
         sys.exit(1)
